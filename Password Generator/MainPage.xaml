@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Password_Generator.MainPage"
+             Title="Password Generate">
+
+    <Grid RowDefinitions="2" BackgroundColor="#121212">
+        <StackLayout Grid.Row="1" Orientation="Vertical" Padding="5" VerticalOptions="Fill" HorizontalOptions="Fill">
+            <Label x:Name="displayPassword" Padding="15" Text="Your Password will be displayed here" FontSize="Large" TextColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        <StackLayout Grid.Row="2" Padding="5" Orientation="Vertical">
+            <Label Text="My password should include ;" FontSize="Body"/>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="upperCheck" CheckedChanged="upperCheck_CheckedChanged" Color="HotPink" IsChecked="True"/>
+                <Label Text="Upper Case" FontSize="Body" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="lowerCheck" CheckedChanged="lowerCheck_CheckedChanged" Color="HotPink"/>
+                <Label Text="Lower Case" FontSize="Body" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="numberCheck" CheckedChanged="numberCheck_CheckedChanged" Color="HotPink"/>
+                <Label Text="Number" FontSize="Body" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="specialCheck" CheckedChanged="specialCheck_CheckedChanged" Color="HotPink"/>
+                <Label Text="Special Char" FontSize="Body" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="emptyCheck" CheckedChanged="emptyCheck_CheckedChanged" Color="HotPink"/>
+                <Label Text="Empty Space" FontSize="Body" VerticalOptions="Center"/>
+            </StackLayout>
+            <Entry x:Name="inputSize" Keyboard="Numeric" Placeholder="Password Size" TextChanged="inputSize_TextChanged"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Copy" x:Name="copyButton" Clicked="copyButton_Clicked" IsEnabled="False" />
+                <Button Text="Generate" x:Name="generateButton" Clicked="generateButton_Clicked" IsEnabled="False" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>
